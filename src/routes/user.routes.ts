@@ -1,18 +1,15 @@
 import { Router } from "express";
 import { AppDataSource } from "../config/data-source";
 import { User } from "../models/user";
+import UserController from "../controllers/user.ctrl";
+
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-  const users = await AppDataSource.getRepository(User).find();
-  res.json(users);
-});
+const UserRouter = Router();
 
-router.post("/", async (req, res) => {
-  const user = await AppDataSource.getRepository(User).create(req.body);
-  const result = await AppDataSource.getRepository(User).save(user);
-  res.send(result);
-});
+UserRouter.route("/")
+  .get(UserController.getAll)
 
-export default router;
+
+export default UserRouter;
