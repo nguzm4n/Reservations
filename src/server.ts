@@ -1,13 +1,14 @@
 import express from "express";
 import { AppDataSource } from "./config/data-source";
-import userRoutes from "./routes/user.routes";
+import api from "./config/api.config";
 import "reflect-metadata";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use("/users", userRoutes);
+app.use('/api', api());
+
 
 // Inicializa la conexión a la base de datos
 AppDataSource.initialize()
@@ -18,3 +19,5 @@ AppDataSource.initialize()
     });
   })
   .catch((error) => console.log("Database connection error:", error));
+
+  export default app;

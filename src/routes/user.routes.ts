@@ -4,8 +4,7 @@ import { User } from "../models/user";
 import UserController from "../controllers/user.ctrl";
 
 
-const router = Router();
-
+ 
 const UserRouter = Router();
 
 UserRouter.route("/")
