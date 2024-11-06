@@ -2,19 +2,22 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Reservation } from "./reservation";
 
 @Entity()
-export class User {
+export class Doctor {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
     name: string;
 
-    @Column({ unique: true })
-    email: string;
+    @Column()
+    specialty: string;
 
     @Column()
-    phone: string;
+    email: string;
 
-    @OneToMany(() => Reservation, (reservation) => reservation.user)
+    @Column({ type: 'text', nullable: true })
+    bio: string;
+
+    @OneToMany(() => Reservation, (reservation) => reservation.doctor)
     reservations: Reservation[];
 }
