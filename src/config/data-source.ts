@@ -6,7 +6,7 @@ import { User } from "../models/user";
 dotenv.config();
 
 export const AppDataSource = new DataSource({
-  type: "postgres",
+  type: "postgres",  
   host: process.env.DB_HOST || "postgres",
   port: Number(process.env.DB_PORT) || 5432,
   username: process.env.DB_USER || "postgres",
@@ -14,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME || "reservas",
   synchronize: true,
   logging: false,
-  entities: ["src/models/*.ts"],
+  entities: ["src/models/*.ts"], 
   migrations: ["src/migrations/*.ts"],
   subscribers: [],
 });

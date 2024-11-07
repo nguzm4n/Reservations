@@ -14,11 +14,12 @@ services:
       - db_data:/var/lib/postgresql/data
 
   app:
-    image: node:latest
+    build: .  # Usa el Dockerfile en el directorio actual
     working_dir: /app
-    command: npm run dev
+    command: npm run dev  # O el comando que inicie nodemon
     volumes:
-      - .:/app
+      - .:/app  # Sincroniza el código local con el contenedor
+      - /app/node_modules  # Evita que se sobrescriban los node_modules
     ports:
       - "3000:3000"
     depends_on:
