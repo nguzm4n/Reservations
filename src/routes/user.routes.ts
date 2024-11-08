@@ -1,6 +1,6 @@
 import { Router } from "express";
 import UserController from "../controllers/user.ctrl";
-
+// import DoctorController from "../controllers/doctor.ctrl";
 
 
  
@@ -20,12 +20,6 @@ UserRouter.route("/")
 // .patch(ReservationController.editById)
 // .delete(ReservationController.deleteById)
 
-  // DoctorRouter.route("/")
-  // // .get(DoctorController.getAll)
-  // .get(DoctorController.getById)
-  // .post(DoctorController.createDoctor)
-  // .patch(DoctorController.editById)
-  // .delete(DoctorController.deleteById)
 
 
 export default UserRouter;
