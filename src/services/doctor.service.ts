@@ -22,8 +22,6 @@ export class DoctorService {
         return await DoctorService.repo.save(doctor)
 
     }
-
-
     
     //Update Doctor Info
     public static async updateDoctor(doctorId: number, doctorData: Partial<Doctor>): Promise<Doctor | null> {
@@ -34,4 +32,13 @@ export class DoctorService {
         await DoctorService.repo.update(doctorId, doctorData);
         return DoctorService.GetById(doctorId)
     }
+
+    //Delete Doctor
+    public static async deleteById(doctorId: number): Promise<boolean> {
+        const result = await DoctorService.repo.delete(doctorId);
+        return result.affected !== 0; // Retorna true si se eliminó algún registro, false en caso contrario
+    
+    }
+
+    
 }

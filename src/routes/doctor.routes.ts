@@ -6,13 +6,12 @@ const DoctorRouter = Router();
 
 DoctorRouter.route("/")
   .get(DoctorController.getAll)
-  .get(DoctorController.getById)
   .post(DoctorController.createDoctor)
   
-  // .delete(DoctorController.deleteById)
 
   DoctorRouter.route("/:id")
+  .get(DoctorController.getById)
   .patch(DoctorController.updateDoctor)
-
+  .delete(DoctorController.deleteDoctor);
 
 export default DoctorRouter;

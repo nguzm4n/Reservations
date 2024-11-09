@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Reservation } from "./reservation";
+import { Availability } from "./availability";
 
 @Entity()
 export class Doctor {
@@ -20,4 +21,10 @@ export class Doctor {
 
     @OneToMany(() => Reservation, (reservation) => reservation.doctor)
     reservations: Reservation[];
+
+    @OneToMany(() => Availability, (reservationBlock) => reservationBlock.doctor)
+    availabilities: Availability[]
+    
+
 }
+

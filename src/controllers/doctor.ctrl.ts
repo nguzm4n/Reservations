@@ -45,7 +45,7 @@ export default class DoctorController{
             const { id } = req.params
             const  doctorData = req.body
             const doctor = await DoctorService.updateDoctor(Number(id), doctorData)
-            res.status(200).json(doctor);
+            res.status(201).json(doctor);
             
         } catch (e: any) {
             const msg = e.message || e;
@@ -53,4 +53,22 @@ export default class DoctorController{
         }
     }
 
+
+    public static async deleteDoctor(req: Request, res: Response): Promise<void> {
+        const { id } = req.params;
+        try {
+            const deleted = await DoctorService.deleteById(Number(id));
+            
+            if (!deleted) {
+                res.status(404).json({ message: "Doctor not found" });
+                return;
+            }
+            
+            res.status(200).json({ message: "Doctor deleted successfully" });
+        } catch (error: any) {
+            res.status(500).json({ message: error.message || "Error deleting doctor" });
+        }
+    }
+    
+    
 }

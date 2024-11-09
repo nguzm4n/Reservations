@@ -13,13 +13,6 @@ UserRouter.route("/")
   // .patch(UserController.editById)
   // .delete(UserController.deleteById)
 
-// ReservationRouter.route("/")
-//   .get(ReservationController.getByUser)
-//   .get(ReservationController.getByDoctor)
-//   .post(ReservationController.createReservation)
-// .patch(ReservationController.editById)
-// .delete(ReservationController.deleteById)
-
 
 
 export default UserRouter;
