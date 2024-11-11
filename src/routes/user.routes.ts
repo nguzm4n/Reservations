@@ -1,6 +1,5 @@
 import { Router } from "express";
 import UserController from "../controllers/user.ctrl";
-// import DoctorController from "../controllers/doctor.ctrl";
 
 
  
