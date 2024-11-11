@@ -13,7 +13,7 @@ export class Reservation {
     @Column({ type: 'timestamp' })
     appointmentDate: Date;
 
-    @Column({ type: "string"})
+    @Column({ type: "text"})
     reservationCode: string;
 
     @Column({ default: false })

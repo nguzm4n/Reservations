@@ -3,10 +3,10 @@ import ReservationController from "../controllers/reservation.ctrl";
 
 const ReservationRouter = Router()
 
-// ReservationRouter.route("/")
+ReservationRouter.route("/")
 //   .get(ReservationController.getByUser)
 //   .get(ReservationController.getByDoctor)
-//   .post(ReservationController.createReservation)
+  .post(ReservationController.createReservation)
 
 
 // ReservationRouter.route("/:id")
