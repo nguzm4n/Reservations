@@ -6,7 +6,9 @@ const AvailabilityRouter = Router()
 
     AvailabilityRouter.route('/')
     .post(AvailabilityController.createSlotTime)
-    // .delete(AvailabilityController.deleteSlotTime)
+
+    AvailabilityRouter.route('/:id')
+    .delete(AvailabilityController.deleteSlotTime)
 
 
 export default AvailabilityRouter

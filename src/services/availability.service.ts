@@ -35,4 +35,11 @@ export class AvailabilityService {
     }
 
 
+    public static async deleteSlotTime(availabilityId: number) {
+
+
+        const result = await AvailabilityService.repo.delete(availabilityId);
+        return result.affected ? true : false;
+    }
+
 }
