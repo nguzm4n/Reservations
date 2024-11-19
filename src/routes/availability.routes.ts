@@ -5,7 +5,7 @@ import { Availability } from "../models/availability";
 const AvailabilityRouter = Router()
 
     AvailabilityRouter.route('/')
-    // .post(AvailabilityController.createSlotTime)
+    .post(AvailabilityController.createSlotTime)
     // .delete(AvailabilityController.deleteSlotTime)
 
 
