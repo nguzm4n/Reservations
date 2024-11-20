@@ -9,7 +9,7 @@ export class Availability {
     @ManyToOne(() => Doctor, (doctor) => doctor.availabilities, { onDelete: 'CASCADE' })
     doctor: Doctor;
 
-    @Column({ type: 'timestamp' })
+    @Column({ type: 'timestamptz' })
     startTime: Date;
 
     @Column({ default: true })

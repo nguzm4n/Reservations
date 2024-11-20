@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import * as dotenv from 'dotenv';
 import { DataSource } from "typeorm";
-import { User } from "../models/user";
+
 
 dotenv.config();
 
@@ -17,4 +17,7 @@ export const AppDataSource = new DataSource({
   entities: ["src/models/*.ts"], 
   migrations: ["src/migrations/*.ts"],
   subscribers: [],
+  extra: {
+    timezone: 'America/Santiago', 
+  }
 });

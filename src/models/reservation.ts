@@ -10,9 +10,6 @@ export class Reservation {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ type: 'timestamp' })
-    appointmentDate: Date;
-
     @Column({ type: "text"})
     reservationCode: string;
 

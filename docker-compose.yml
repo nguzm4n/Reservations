@@ -8,22 +8,23 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: reservas
+      TZ: America/Santiago
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
 
-  app:
-    build: .  # Usa el Dockerfile en el directorio actual
-    working_dir: /app
-    command: npm run dev  # O el comando que inicie nodemon
-    volumes:
-      - .:/app  # Sincroniza el código local con el contenedor
-      - /app/node_modules  # Evita que se sobrescriban los node_modules
-    ports:
-      - "3000:3000"
-    depends_on:
-      - postgres
+  # app:
+  #   build: .  # Usa el Dockerfile en el directorio actual
+  #   working_dir: /app
+  #   command: npm run dev  # O el comando que inicie nodemon
+  #   volumes:
+  #     - .:/app  # Sincroniza el código local con el contenedor
+  #     - /app/node_modules  # Evita que se sobrescriban los node_modules
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - postgres
 
 volumes:
   db_data:

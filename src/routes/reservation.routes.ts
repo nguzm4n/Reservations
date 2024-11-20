@@ -7,11 +7,11 @@ ReservationRouter.route("/")
 //   .get(ReservationController.getByUser)
 //   .get(ReservationController.getByDoctor)
   .post(ReservationController.createReservation)
+  .delete(ReservationController.deleteReservation)
 
-
-// ReservationRouter.route("/:id")
+ReservationRouter.route("/:reservationId/")
 // .patch(ReservationController.editById)
-// .delete(ReservationController.deleteById)
+
 
 
 export default ReservationRouter
