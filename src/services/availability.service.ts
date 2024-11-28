@@ -37,7 +37,7 @@ export class AvailabilityService {
         return await AvailabilityService.repo.save(slotTime);
     }
 
-
+    //Delete Slot Time
     public static async deleteSlotTime(availabilityId: number) {
 
 
